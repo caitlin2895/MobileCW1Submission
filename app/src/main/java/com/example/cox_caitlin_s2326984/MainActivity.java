@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener,
     private Fragment fr;        // the screen picked with the top bar, so "back" can return to it
 
     // AUTO UPDATE - how often the feeds are downloaded again
-    // private final static long UPDATE_INTERVAL = 60 * 60 * 1000; // 1 hour in milliseconds
-    private final static long UPDATE_INTERVAL = 60 * 1000; // demo: 1 minute
+    private final static long UPDATE_INTERVAL = 60 * 60 * 1000; // 1 hour in milliseconds
+//    private final static long UPDATE_INTERVAL = 60 * 1000; // demo: 1 minute
     // handler on the UI thread, used to run autoUpdate after UPDATE_INTERVAL
     private Handler timerHandler = new Handler(Looper.getMainLooper());
 
