@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LANDSCAPE version of the search screen (res/layout-land) - MPD_02a_Layouts / Lab 3 Task 2
+     Outer layout is HORIZONTAL: both searches, the map button and the result count in a
+     column on the left (inside a ScrollView, as there is not much height in landscape),
+     results ListView on the right using the full height of the screen.
+     All android:id values are the same as portrait so SearchFragment is unchanged -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- left column: scrolls if it doesn't fit (ScrollView has ONE child) -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/listTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Search by road"
+                />
+
+            <EditText
+                android:id="@+id/roadInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Road name, e.g. M8"
+                android:inputType="text"
+                android:maxLines="1"
+                />
+
+            <!-- button now sits UNDER the search box instead of beside it -->
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Or search near a place"
+                />
+
+            <!-- place, distance and button stacked instead of side by side -->
+            <Spinner
+                android:id="@+id/placeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <EditText
+                android:id="@+id/distanceInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Distance in km"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                />
+            <Button
+                android:id="@+id/nearButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nearby"
+                />
+
+            <!-- shows every result of the search on the map screen -->
+            <Button
+                android:id="@+id/mapButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Show results on map"
+                />
+
+            <TextView
+                android:id="@+id/resultsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:text="Search by road name, or pick a place and a distance in km"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- right: results, using the same CustomAdapter rows as the two lists -->
+    <ListView
+        android:id="@+id/searchList"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        />
+</LinearLayout>

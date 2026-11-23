@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- one row of the incidents / roadworks lists (ListView_custom example, MPD_03a_MoreWidgets):
+     colour bar (roadworks duration) + icon (type of situation) + text -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <View
+        android:id="@+id/colourBar"
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:tint="?android:attr/textColorPrimary"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="8dp"
+        android:textSize="16sp"/>
+</LinearLayout>

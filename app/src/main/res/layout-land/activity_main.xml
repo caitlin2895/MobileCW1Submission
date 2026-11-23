@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LANDSCAPE version of activity_main (res/layout-land) - MPD_02a_Layouts / Lab 3 Task 2
+     Outer layout is HORIZONTAL: a narrow column on the left holds the title and the
+     four buttons stacked vertically, and the fragment holder takes the rest of the
+     width on the right (same idea as the pizza app landscape sketch, Lab 5).
+     All android:id values are the same as the portrait layout so MainActivity is unchanged -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- left column: title + buttons (vertical layout inside the horizontal one) -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/salutation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Welcome to Mobile Platform Development"
+            />
+        <TextView
+            android:id="@+id/acknowledgement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="Contains Traffic Scotland data"
+            />
+
+        <!-- buttons to pick which Fragment to show (MPD_5b_Fragments) - frbutton1 to frbutton4,
+             stacked one under the other instead of side by side -->
+        <Button
+            android:id="@+id/frbutton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Incidents"
+            />
+        <Button
+            android:id="@+id/frbutton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Roadworks"
+            />
+        <Button
+            android:id="@+id/frbutton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            />
+        <Button
+            android:id="@+id/frbutton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Map"
+            />
+    </LinearLayout>
+
+    <!-- fragment holder (MPD_5b_Fragments) - right hand side, 3 times the width of the left column -->
+    <FrameLayout
+        android:id="@+id/fragholder"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        />
+</LinearLayout>

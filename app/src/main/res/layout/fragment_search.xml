@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Search screen (MPD_03a_MoreWidgets):
+     search by road (EditText + Button), search by distance (Spinner + EditText + Button),
+     then the results count, the map button and the results ListView -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/listTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Search by road"
+        />
+
+    <!-- search box and button side by side -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/roadInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Road name, e.g. M8"
+            android:inputType="text"
+            android:maxLines="1"
+            />
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Or search near a place"
+        />
+
+    <!-- place, distance in km and button side by side -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/placeSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <!-- numberDecimal gives a number keyboard (Lab 2 Task 3: choose the right inputType) -->
+        <EditText
+            android:id="@+id/distanceInput"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:hint="km"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            />
+        <Button
+            android:id="@+id/nearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nearby"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Search by road name, or pick a place and a distance in km"
+        />
+
+    <!-- shows every result of the search on the map screen -->
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show results on map"
+        />
+
+    <!-- results, using the same CustomAdapter rows as the two lists -->
+    <ListView
+        android:id="@+id/searchList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+</LinearLayout>
